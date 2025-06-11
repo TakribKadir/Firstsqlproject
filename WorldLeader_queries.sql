@@ -31,10 +31,25 @@ SELECT
 FROM
 	PRESIDENTS AS P1
 	INNER JOIN PRIME_MINISTERS AS P2 ON P1.COUNTRY = P2.COUNTRY;
-
-SELECT
+--Multiple Inner Joins
+/*SELECT
 	*
 FROM
 	LEFT_TABLE
 	INNER JOIN RIGHT_TABLE ON LEFT_TABLE.ID = RIGHT_TABLE.ID
 	INNER JOIN ANOTHER_TABLE ON LEFT_TABLE.ID = ANOTHER_TABLE.ID;
+*/
+-- SQL query for chaining inner joins 
+SELECT  
+    p1.country,  
+    p1.continent,  
+    president,  
+    prime_minister,  
+    pm_start 
+FROM prime_ministers AS p1 
+INNER JOIN presidents AS p2 
+USING(country)  
+INNER JOIN prime_minister_terms AS p3 
+USING(prime_minister);
+
+	
