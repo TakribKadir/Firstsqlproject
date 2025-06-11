@@ -1,6 +1,23 @@
-Select * From monarchs;
-SELECT prime_ministers.country, prime_ministers.continent,
-prime_ministers, president
-FROM presidents
-INNER JOIN prime_ministers
-ON presidents.country = prime_ministers.country;
+SELECT
+	*
+FROM
+	MONARCHS;
+
+SELECT
+	PRIME_MINISTERS.COUNTRY,
+	PRIME_MINISTERS.CONTINENT,
+	PRIME_MINISTERS,
+	PRESIDENT
+FROM
+	PRESIDENTS
+	INNER JOIN PRIME_MINISTERS ON PRESIDENTS.COUNTRY = PRIME_MINISTERS.COUNTRY;
+
+--Inner join of presidents and prime_ministers, joining on country 
+SELECT
+	P2.COUNTRY,
+	P2.CONTINENT,
+	PRIME_MINISTER,
+	PRESIDENT
+FROM
+	PRESIDENTS AS P1
+	INNER JOIN PRIME_MINISTERS AS P2 USING (COUNTRY);
