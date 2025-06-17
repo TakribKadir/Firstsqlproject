@@ -1,6 +1,7 @@
 --Calculating Profit by Bringing Revenue and Cost Togather
 WITH
 	REVENUE AS (
+	--I am bringing my revenue calculation here
 		SELECT
 			MEALS.MEAL_ID,
 			SUM(MEAL_PRICE * ORDER_QUANTITY) AS REVENUE
@@ -10,6 +11,7 @@ WITH
 		GROUP BY
 			MEALS.MEAL_ID
 	),
+	--this is my cost calculation
 	COST AS (
 		SELECT
 			MEALS.MEAL_ID,
@@ -20,6 +22,7 @@ WITH
 		GROUP BY
 			MEALS.MEAL_ID
 	)
+	--this is the profit calculation
 SELECT
 	REVENUE.MEAL_ID,
 	REVENUE,
